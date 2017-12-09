@@ -1,0 +1,26 @@
+<div style="width:50%;">
+    <canvas id="myChart" width="580" height="300"></canvas>
+</div>
+<script>
+    var color = Chart.helpers.color;
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var scatterChart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+        datasets: [{
+            label: 'User <%= @user_id  %> most used stations',
+            backgroundColor: "#<%= SecureRandom.hex(3) %>",
+            pointRadius: 7,
+            data: <%= @result %>
+        }]
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: 'linear',
+                position: 'bottom'
+            }]
+        }
+    }
+});
+</script>

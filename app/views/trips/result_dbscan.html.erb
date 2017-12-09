@@ -1,0 +1,86 @@
+<div>
+    <p> <%= "Total de clusters: #{@total_clusters} "%></p>
+    <h2><%= "[ #{@attribute1} , #{@attribute2} ]" %></h2>
+    <% if @attribute1 == "genere" || @attribute2 == "genere" %>
+        <p>0 : Mujeres</p> 
+        <p>1 : Hombres</p> 
+    <%end%>
+</div>
+
+<div id="canvas-container" style="width:90%;">
+    <canvas id="chart" width="580" height="300"></canvas>
+</div>
+
+<script>
+    $(document).ready(function(){
+        var graphic = ""
+        if(<%= @graphic == "line" %>){
+                graphic = "line"
+            }
+        if(<%= @graphic == "pie" %>){
+                graphic = "pie"
+            }
+        if(<%= @graphic == "bar" %>){
+                graphic = "bar"
+            }
+        var datos = {
+
+            type: graphic,
+            data : {
+                datasets :[{
+                    laber:"",
+                    data : [
+                        <% for i in 1..@outliner_clean.length %>
+                            <%= 1 %>,
+                        <% end %>  
+                        <%  @num_elements_in_clusters_clean.sort.each do |value| %>
+                            <%= value %>,
+                        <% end %>
+                    ],
+                    <% if @graphic != "line"%>    
+                    backgroundColor: [
+                        <% for i in 1..@iter %>
+                                "#<%= SecureRandom.hex(3) %>",
+                        <%end%>
+                    ],
+                    <%end%> 
+                }],
+                labels : [
+                    <% @outliner_clean.each do |value| %>
+                            "<%= value %>",
+                    <% end %>
+                    <% @ordered_data.sort.each do |value| %>
+                            "<%= @all_clusters_clean[value[1]] %>",
+                    <% end %>
+                ]
+            },
+            
+            options : {
+                responsive : true,
+                <%if @graphic != "pie"%>
+                scales:{
+                    yAxes: [{
+                        ticks:{
+                            beginAtZero: true
+                        }
+                    }]
+                }
+                <%end%> 
+            }
+            
+        };
+
+        if(<%= @graphic == "line" %>){
+            var canvas = document.getElementById('chart').getContext('2d');
+            window.line = new Chart(canvas, datos);
+        } 
+        if(<%= @graphic == "pie" %>){
+            var canvas = document.getElementById('chart').getContext('2d');
+            window.pie = new Chart(canvas, datos);
+        } 
+        if(<%= @graphic == "bar" %>){
+            var canvas = document.getElementById('chart').getContext('2d');
+            window.bar = new Chart(canvas, datos);
+        } 
+    });
+</script>

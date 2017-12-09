@@ -35,6 +35,10 @@ gem 'bcrypt', '~> 3.1.7', platforms: [:ruby, :x64_mingw]
 
 gem 'devise'
 
+gem 'data_mining'
+
+gem 'jquery-rails'
+
 #gem 'bcrypt', platforms: :ruby
 
 group :development, :test do

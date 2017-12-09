@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>User ID</th>
       <th>Genere</th>
       <th>Age</th>
       <th>Start trip</th>
@@ -18,15 +19,16 @@
   <tbody>
     <% @trips.each do |trip| %>
       <tr>
-        <td><%= trip.genere %></td>
-        <td><%= trip.age %></td>
-        <td><%= trip.start_trip %></td>
-        <td><%= trip.end_trip %></td>
-        <td><%= trip.origin_id %></td>
-        <td><%= trip.destination_id %></td>
-        <td><%= link_to 'Show', trip %></td>
-        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-        <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= trip.user_id %></td>
+          <td><%= trip.genere %></td>
+          <td><%= trip.age %></td>
+          <td><%= trip.start_trip %></td>
+          <td><%= trip.end_trip %></td>
+          <td><%= trip.origin_id %></td>
+          <td><%= trip.destination_id %></td>
+          <td><%= link_to 'Show', trip %></td>
+          <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+          <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,5 @@
+<%= form_tag "result_apriori", method: :get do %>
+    <%= label_tag "User ID:", :user_id %>
+    <%= text_field_tag :user_id, params[:user_id], placeholder: "User ID"%>
+    <%= submit_tag "Search", name: nil %>
+<%end%>

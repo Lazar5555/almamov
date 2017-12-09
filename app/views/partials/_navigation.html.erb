@@ -1,16 +1,23 @@
 <nav>
     <div class="nav-wrapper blue darken-3">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#"></a></li>
-        <li><a href="#">Statistics</a></li>
-        <li><a href="#">Data Mining</a></li>
-        <% if user_signed_in? %>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-        <%else%>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-        <%end%>
-      </ul>
+        <%= link_to "Logo", root_path, class: 'brand-logo' %>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%= link_to "Statistics", "/statistics" %></li>
+            <!-- Dropdown button -->
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown" data-beloworigin="true">Data Mining<i class="material-icons right">arrow_drop_down</i></a></li>       
+            <% if user_signed_in? %>
+                <li><%= link_to "Data Base", trips_path %></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <%else%>
+                <li><%= link_to "Login", new_user_session_path %></li>
+                <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <%end%>
+        </ul>
     </div>
-  </nav>
+</nav>
+
+<!-- Dropdown Structure -->
+<ul id="dropdown" class="dropdown-content">
+    <li><a href="/trips/dbscan">DBSCAN<i class="material-icons">insert_chart</i></a></li>
+    <li><a href="/trips/apriori">Apriori<i class="material-icons">pie_chart</i></a></li>
+</ul>

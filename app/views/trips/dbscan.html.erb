@@ -1,0 +1,23 @@
+<%= form_tag "result_dbscan", method: :get do %>
+    <p></p>Attributes</p>
+    <div>
+        <%= select_tag :data1, options_for_select([ ['Origin ID', 'origin_id'], ['Destination ID', 'destination_id'], ['Genre', 'genere'], ['Age', 'age'], ['Start trip', 'start_trip'], ['End trip', 'end_trip'] ], params[:data1]) %>
+    </div>
+
+    <div>
+        <%= select_tag :data2, options_for_select([ ['Origin ID', 'origin_id'], ['Destination ID', 'destination_id'], ['Genre', 'genere'], ['Age', 'age'], ['Start trip', 'start_trip'], ['End trip', 'end_trip'] ], params[:data2]) %>
+    </div>
+
+    <p>Chart Type</p>
+    <div>
+        <%= select_tag :chart, options_for_select([ ['Pie', 'pie'], ['Bar', 'bar'], ['Line', 'line'] ], params[:chart]) %>
+    </div>
+
+    <%= submit_tag "Apply", name: nil, class: 'btn' %>
+<%end%>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
