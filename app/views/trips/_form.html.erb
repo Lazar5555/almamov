@@ -1,52 +1,66 @@
-<%= form_with(model: trip, local: true) do |form| %>
-  <% if trip.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body >
+        <div>
+            <%= form_with(model: trip, local: true) do |form| %>
+              <% if trip.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
 
-      <ul>
-      <% trip.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                  <ul>
+                  <% trip.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :trip_user_id %>
-  </div>
+              <div class="form_d">
+                  <br />
+                  <div class="field">
+                  <br />
+                    <%= form.label :genere %>
+                    <%= form.text_field :genere, id: :trip_genere %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :genere %>
-    <%= form.text_field :genere, id: :trip_genere %>
-  </div>
+                  <div class="field">
+                  <br />
+                    <%= form.label :age %>
+                    <%= form.number_field :age, id: :trip_age %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age, id: :trip_age %>
-  </div>
+                  <div class="field">
+                  <br />
+                    <%= form.label :start_trip %>
+                    <%= form.datetime_select :start_trip, id: :trip_start_trip %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :start_trip %>
-    <%= form.datetime_select :start_trip, id: :trip_start_trip %>
-  </div>
+                  <div class="field">
+                  <br />
+                    <%= form.label :end_trip %>
+                    <%= form.datetime_select :end_trip, id: :trip_end_trip %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :end_trip %>
-    <%= form.datetime_select :end_trip, id: :trip_end_trip %>
-  </div>
+                  <div class="field">
+                  <br />
+                    <%= form.label :origin_id %>
+                    <%= form.number_field :origin_id, id: :trip_origin_id %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :origin_id %>
-    <%= form.number_field :origin_id, id: :trip_origin_id %>
-  </div>
+                  <div class="field">
+                  <br />
+                    <%= form.label :destination_id %>
+                    <%= form.number_field :destination_id, id: :trip_destination_id %>
+                  </div>
 
-  <div class="field">
-    <%= form.label :destination_id %>
-    <%= form.number_field :destination_id, id: :trip_destination_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+                  <div class="actions">
+                    <%= form.submit "update", class:"botton" %>
+                  </div>
+              </div>
+            <% end %>
+        </div>
+    </body>
+</html>

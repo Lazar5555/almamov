@@ -1,0 +1,3 @@
+#26a69a teal lighten-1
+#1565c0 blue darken-3
+#64dd17 light-green accent-4

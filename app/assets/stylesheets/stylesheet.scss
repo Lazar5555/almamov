@@ -1,0 +1,126 @@
+body{
+    /*background-color: white;*/
+    background-image: url("background-bike.jpg");
+}
+
+#nav-mobile{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #105aaf;
+    width: 90%;
+    float: right;
+}
+
+#nav-mobile li {
+    float: right;
+}
+
+#nav-mobile li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#nav-mobile li a:hover {
+    background-color: #00c32d;
+}
+
+.signup{
+    text-align: center;
+}
+
+.field {
+    background-color: rgba(60, 231, 99, 0.79);
+    margin: auto;
+    width: 400px;
+    height: 100px;
+    color: #0f3611;
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
+.t_login{
+    background-color: #0f3611;
+    font-family: 'Roboto';
+    color: white;
+    width: 400px;
+    margin: auto;
+    border: double;
+    border-color: white;
+}
+
+.attribute{
+    color: #0f3611;
+    font-family: sans-serif verdana;
+    font-weight: 400;
+    text-align: center;
+    font-size: 20px;
+    
+}
+
+.text_edit{
+    border-radius: 10px;
+    color: #625f15;
+    font-family: sans-serif verdana;
+    padding: 4px;
+    width: auto;
+    font-size: 15px;
+
+}
+
+.botton{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #111871;
+    width: auto;
+    height: 50px;
+    color: white;
+    border-color: white;
+    font-family: sans-serif verdana;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 12px;
+}
+
+.botton:hover{
+    background-color: #075738;
+    color: white;
+    font-family: sans-serif verdana;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 12px;
+}
+
+.hyper{
+    font-size: 20px;
+    font-family: sans-serif verdana;
+    color: #0d76d1;
+}
+
+
+h2{
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif verdana;
+}
+
+.image_logo{
+    background-image: url(../images/logo.png);
+    width: 40px;
+    height: 20px;
+}
+
+.text-info-l{
+    background-color: #039be5;
+    margin: 5px;
+}
+
+.text-info-r{
+    display: block;
+    background-color: #039be5;
+    margin: 5px;
+}

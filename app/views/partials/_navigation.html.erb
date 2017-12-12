@@ -1,23 +1,42 @@
-<nav>
-    <div class="nav-wrapper blue darken-3">
-        <%= link_to "Logo", root_path, class: 'brand-logo' %>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><%= link_to "Statistics", "/statistics" %></li>
-            <!-- Dropdown button -->
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown" data-beloworigin="true">Data Mining<i class="material-icons right">arrow_drop_down</i></a></li>       
-            <% if user_signed_in? %>
-                <li><%= link_to "Data Base", trips_path %></li>
-                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-            <%else%>
-                <li><%= link_to "Login", new_user_session_path %></li>
-                <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <%end%>
-        </ul>
-    </div>
-</nav>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div>
+            <!--<div class="nav-wrapper blue darken-3">
+                <div> class="image_logo"
+                    <%= image_tag "logo.png" %>
+                </div>-->
 
-<!-- Dropdown Structure -->
-<ul id="dropdown" class="dropdown-content">
-    <li><a href="/trips/dbscan">DBSCAN<i class="material-icons">insert_chart</i></a></li>
-    <li><a href="/trips/apriori">Apriori<i class="material-icons">pie_chart</i></a></li>
-</ul>
+                <!-- <a href="../welcome/index.html.erb" class="brand-logo" style="font-size: 50px; color: #A5066D" >ALMAMOV</a> -->
+                <!--<%= link_to "Logo", root_path, class: 'brand-logo' %> -->
+            <div>
+                <%= image_tag "logon.png" %>
+            </div>
+            <div>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><%= link_to "Statistics", "/statistics" %></li>
+                
+                <!-- Dropdown button -->
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown" data-beloworigin="true">Data Mining<i class="material-icons right">arrow_drop_down</i></a></li>       
+                <% if user_signed_in? %>
+                    <li><%= link_to "Data Base", trips_path %></li>
+                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                <%else%>
+                    <li><%= link_to "Login", new_user_session_path %></li>
+                    <li><%= link_to "Sign up", new_user_registration_path %></li>
+                <%end%>
+                
+            </ul>
+        </div>
+                
+            <!-- Dropdown Structure -->
+            <ul id="dropdown" class="dropdown-content">
+                <li><a href="/trips/dbscan">DBSCAN<i class="material-icons">insert_chart</i></a></li>
+                <li><a href="/trips/apriori">Apriori<i class="material-icons">pie_chart</i></a></li>
+            </ul>
+        </div>
+    </body>
+</html>
