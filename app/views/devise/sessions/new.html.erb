@@ -5,12 +5,11 @@
         <link type="text/css" href="../../../assets/stylesheets/stylesheet.scss" />
     </head>
     <body>
-        <div class="signup" style="text-align: center; width:100%; margin: 100px 5px; height: 60px">
+        <div class="signup" style="text-align: center; width:100%; margin: 100px 5px;">
             <h2 class="t_login">Log in</h2>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="field">
-                <br />
-                <br />
+                
                 <%= f.label :email, class:"attribute" %> <br />
                 <%= f.email_field :email, class:"text_edit", autofocus: true %>
               </div>

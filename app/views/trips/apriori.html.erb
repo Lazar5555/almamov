@@ -1,5 +1,28 @@
-<%= form_tag "result_apriori", method: :get do %>
-    <%= label_tag "User ID:", :user_id %>
-    <%= text_field_tag :user_id, params[:user_id], placeholder: "User ID"%>
-    <%= submit_tag "Search", name: nil %>
-<%end%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	</head>
+		<body>
+			<div class="container">
+				<div class="row">
+			      <div class="col s9 m2">
+			        <div class="card-panel light-green darken-1">
+			          <span class="white-text">The Apriori Algorithm is an influential algorithm for mining frequent itemsets for boolean association rules.
+			          Apriori is designed to operate on database containing transactions (for example, collections of items bought by customers, or details of a website frequentation).
+			          </span>
+			        </div>
+					<%= form_tag "result_apriori", method: :get do %>
+					<strong> <h4><p>Attributes</p></h4></strong>
+			    		<div class="field">
+	                  	<br />
+			    		<%= label_tag "User ID:", :user_id, class: "attribute" %>
+			    		<%= text_field_tag :user_id, class:"text_edit", params[:user_id], placeholder: "User ID"%>
+			    		<%= submit_tag "Search",class  name: nil, class: 'btn' %>
+					<%end%>
+				</div>
+			</div>
+		</div>
+	</div>
+		</body>
+	</html>

@@ -12,11 +12,11 @@
 
                 <!-- <a href="../welcome/index.html.erb" class="brand-logo" style="font-size: 50px; color: #A5066D" >ALMAMOV</a> -->
                 <!--<%= link_to "Logo", root_path, class: 'brand-logo' %> -->
-            <div>
+            <div class="image_logo">
                 <%= image_tag "logon.png" %>
             </div>
             <div>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <ul id="nav-mobile" class="right  hide-on-med-and-down">
                 <li><%= link_to "Statistics", "/statistics" %></li>
                 
                 <!-- Dropdown button -->
@@ -33,7 +33,7 @@
         </div>
                 
             <!-- Dropdown Structure -->
-            <ul id="dropdown" class="dropdown-content">
+            <ul id="dropdown" class="dropdown-content teal lighten-1">
                 <li><a href="/trips/dbscan">DBSCAN<i class="material-icons">insert_chart</i></a></li>
                 <li><a href="/trips/apriori">Apriori<i class="material-icons">pie_chart</i></a></li>
             </ul>

@@ -4,7 +4,7 @@
         <title></title>
     </head>
     <body>
-        <div class="signup" style="text-align: center; width:100%; margin: 100px 5px; font-size: 18px; height: 200px;">
+        <div class="signup" style="text-align: center; font-size: 18px;">
             <h2 class="t_login" >Sign up</h2>
 
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -50,5 +50,6 @@
 
             <%= render "devise/shared/links" %>
         </div>
+        <div id="inv"></div>
     </body>
 </html>

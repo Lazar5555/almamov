@@ -1,23 +1,41 @@
-<%= form_tag "result_dbscan", method: :get do %>
-    <p></p>Attributes</p>
-    <div>
-        <%= select_tag :data1, options_for_select([ ['Origin ID', 'origin_id'], ['Destination ID', 'destination_id'], ['Genre', 'genere'], ['Age', 'age'], ['Start trip', 'start_trip'], ['End trip', 'end_trip'] ], params[:data1]) %>
-    </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row"> 
+                <div class="col s9 push-s2">
+                    <div class="card-panel light-green darken-1">
+                      <span class="white-text">DBSCAN, (Density-Based Spatial Clustering of Applications with Noise), captures the insight that clusters are dense groups of points. The idea is that if a particular point belongs to a cluster, it should be near to lots of other points in that cluster. 
+                      </span>
+                    </div>
+                             <%= form_tag "result_dbscan", method: :get do %>
+                            <strong> <h4><p>Attributes</p></h4></strong>
+                            <div class="lime lighten-4 ">
+                                <%= select_tag :data1, options_for_select([ ['Origin ID', 'origin_id'], ['Destination ID', 'destination_id'], ['Genre', 'genere'], ['Age', 'age'], ['Start trip', 'start_trip'], ['End trip', 'end_trip'] ], params[:data1]) %>
+                            </div>
 
-    <div>
-        <%= select_tag :data2, options_for_select([ ['Origin ID', 'origin_id'], ['Destination ID', 'destination_id'], ['Genre', 'genere'], ['Age', 'age'], ['Start trip', 'start_trip'], ['End trip', 'end_trip'] ], params[:data2]) %>
-    </div>
+                            <div class="lime lighten-4">
+                                <%= select_tag :data2, options_for_select([ ['Origin ID', 'origin_id'], ['Destination ID', 'destination_id'], ['Genre', 'genere'], ['Age', 'age'], ['Start trip', 'start_trip'], ['End trip', 'end_trip'] ], params[:data2]) %>
+                            </div>
 
-    <p>Chart Type</p>
-    <div>
-        <%= select_tag :chart, options_for_select([ ['Pie', 'pie'], ['Bar', 'bar'], ['Line', 'line'] ], params[:chart]) %>
-    </div>
+                            <strong> <h4><p>Chart Type</p></h4></strong>
+                            <div class="lime lighten-4">
+                                <%= select_tag :chart, options_for_select([ ['Pie', 'pie'], ['Bar', 'bar'], ['Line', 'line'] ], params[:chart]) %>
+                            </div>
 
-    <%= submit_tag "Apply", name: nil, class: 'btn' %>
-<%end%>
+                            <%= submit_tag "Apply", name: nil, class: 'btn' %>
+                        <%end%>
 
-<script>
-    $(document).ready(function() {
-        $('select').material_select();
-    });
-</script>
+                        <script>
+                            $(document).ready(function() {
+                                $('select').material_select();
+                            });
+                        </script>   
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>
